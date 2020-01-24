@@ -26,7 +26,8 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines
+    pip install -e .
     cd tests/
     pip install -r requirements.txt
-    python test_home_page.py
+    python -m pytest test_home_page.py
   displayName: 'pytest'
